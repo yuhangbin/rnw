@@ -7,10 +7,8 @@ name = "rnw"
 version = "0.1.0"
 description = "A simple Python calculator package for demonstration purposes"
 readme = "README.md"
-authors = [
-    {name = "Developer", email = "developer@example.com"}
-]
-license = {text = "MIT"}
+authors = [{ name = "Developer", email = "developer@example.com" }]
+license = { text = "MIT" }
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -23,45 +21,30 @@ classifiers = [
 ]
 requires-python = ">=3.8"
 dependencies = [
-    # Uncomment dependencies as needed:
-    # "requests>=2.28.0",        # HTTP library
-    # "numpy>=1.21.0",           # Numerical computing  
-    # "pandas>=1.3.0",           # Data analysis
-    # "click>=8.0.0",            # CLI framework
-    # "pydantic>=1.9.0",         # Data validation
-    # "python-dateutil>=2.8.0",  # Date utilities
+    # Document processing - using range for stability
+    "markitdown[all]>=0.0.1,<1.0.0", # Stay in 0.x series until stable
+    # Add other runtime dependencies as needed:
+    # "requests>=2.28.0,<3.0.0",        # HTTP library - avoid 3.x breaking changes
+    # "numpy>=1.21.0,<2.0.0",           # Numerical computing - 2.x has breaking changes
+    # "pandas>=1.3.0,<3.0.0",           # Data analysis - allow 1.x and 2.x
+    # "click>=8.0.0,<9.0.0",            # CLI framework - stable within major version
+    # "pydantic>=1.9.0,<3.0.0",         # Data validation - allow 1.x and 2.x
+    # "python-dateutil>=2.8.0,<3.0.0",  # Date utilities - stable API
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.0.0",
-    "pytest-cov>=4.0.0",
-    "black>=22.0.0",
-    "flake8>=5.0.0",
-    "mypy>=1.0.0",
+    "pytest>=7.0.0,<9.0.0",     # Testing framework - allow 7.x and 8.x
+    "pytest-cov>=4.0.0,<6.0.0", # Coverage reporting - stable API
+    "black>=22.0.0,<26.0.0",    # Code formatter - allow current versions
+    "flake8>=5.0.0,<8.0.0",     # Linter - stable within major versions
+    "mypy>=1.0.0,<2.0.0",       # Type checker - 1.x series is stable
 ]
-test = [
-    "pytest>=7.0.0",
-    "pytest-cov>=4.0.0",
-    "pytest-mock>=3.0.0",
-]
-docs = [
-    "sphinx>=4.0.0",
-    "sphinx-rtd-theme>=1.0.0",
-]
-web = [
-    "fastapi>=0.68.0",
-    "uvicorn>=0.15.0",
-]
-production = [
-    "gunicorn>=20.0.0",
-    "psycopg2-binary>=2.9.0",
-]
-ci = [
-    "pytest>=7.0.0",
-    "pytest-cov>=4.0.0",
-    "codecov>=2.1.0",
-]
+test = ["pytest>=7.0.0", "pytest-cov>=4.0.0", "pytest-mock>=3.0.0"]
+docs = ["sphinx>=4.0.0", "sphinx-rtd-theme>=1.0.0"]
+web = ["fastapi>=0.68.0", "uvicorn>=0.15.0"]
+production = ["gunicorn>=20.0.0", "psycopg2-binary>=2.9.0"]
+ci = ["pytest>=7.0.0", "pytest-cov>=4.0.0", "codecov>=2.1.0"]
 
 [project.urls]
 Homepage = "https://github.com/example/rnw"

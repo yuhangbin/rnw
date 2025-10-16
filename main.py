@@ -7,6 +7,7 @@ and serves as an example of how to use the package.
 """
 
 from src.rnw.calculator import add, subtract, multiply, divide, power
+from src.rnw.document_processor import demo_document_processing
 
 
 def main():
@@ -72,9 +73,26 @@ def main():
     print(f"    Final result: {step3}")
     print()
     
+    # Demonstrate HTTP functionality (using runtime dependency)
+    print("HTTP Calculator Example (using requests library):")
+    try:
+        rate = get_exchange_rate("USD", "EUR")
+        print(f"  Current USD to EUR rate: {rate}")
+        
+        result = currency_calculator(100, "add", 50, "USD", "EUR")
+        print(f"  100 USD + 50 USD = {result['result']} USD")
+        print(f"  Converted to EUR: {result['converted_result']:.2f} EUR")
+    except Exception as e:
+        print(f"  HTTP example failed (network issue): {e}")
+    print()
+    
     print("=" * 50)
     print("Demonstration complete!")
     print("Run 'pytest' to execute the test suite.")
+    print("This project demonstrates:")
+    print("  ✅ Runtime dependencies (requests)")
+    print("  ✅ Development dependencies (pytest, black, etc.)")
+    print("  ✅ Modern Python packaging (pyproject.toml)")
     print("=" * 50)
 
 
