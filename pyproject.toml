@@ -23,6 +23,7 @@ requires-python = ">=3.8"
 dependencies = [
     # Document processing - using range for stability
     "markitdown[all]>=0.0.1,<1.0.0", # Stay in 0.x series until stable
+    "pypdf>=6.1.1"
     # Add other runtime dependencies as needed:
     # "requests>=2.28.0,<3.0.0",        # HTTP library - avoid 3.x breaking changes
     # "numpy>=1.21.0,<2.0.0",           # Numerical computing - 2.x has breaking changes

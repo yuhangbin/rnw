@@ -2,9 +2,7 @@
 
 __version__ = "0.1.0"
 __author__ = "Developer"
-__description__ = "A simple calculator package for demonstration purposes"
+__description__ = ""
 
-from .calculator import add, subtract, multiply, divide, power
-from .http_calculator import get_exchange_rate, currency_calculator
-
-__all__ = ["add", "subtract", "multiply", "divide", "power", "get_exchange_rate", "currency_calculator"]
+from .document_process import extract
+__all__ = ["extract"]
