@@ -267,3 +267,5 @@ secrets.json
 # Backup files
 *.bak
 *.backup
+
+*.pdf
